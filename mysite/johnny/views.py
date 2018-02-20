@@ -1,9 +1,14 @@
 from django.shortcuts import render
-from .models import Athlete
 
 
 def index(request):
+    athlete_list = [
+        {'name': 'Steve Nash', 'ppg': 19.7, 'active': False},
+        {'name': 'LBJ', 'ppg': 27.2, 'active': False},
+        {'name': 'Russell Westbrook', 'ppg': 24.5, 'active': False},
+        {'name': 'James Harden', 'ppg': 26.8, 'active': False},
+    ]
     context = {
-        'athlete_list': Athlete.objects.all()
+        'athlete_list': athlete_list
     }
     return render(request, 'johnny/index.html', context)
