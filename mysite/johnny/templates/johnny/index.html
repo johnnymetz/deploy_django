@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Johnny{% endblock %}</title>
+</head>
+<body>
+  <h1>Welcome to Johnny's site!</h1>
+  {% for athlete in athlete_list %}
+    <div>Name: {{ athlete.name }}</div>
+    <div>PPG: {{ athlete.ppg }}</div>
+    <div>Active: {{ athlete.active }}</div>
+    {% if not forloop.last %}
+      <hr>
+    {% endif %}
+  {% endfor %}
+</body>
+</html>
